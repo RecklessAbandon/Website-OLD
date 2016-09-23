@@ -1,5 +1,6 @@
 {
   "name": "theheartofteens-website",
+  "description": "The Heart of Teens Official Website",
   "private": true,
   "license": "LGPLv3",
   "repository": {
