@@ -24,8 +24,8 @@ ryw:blog
 twbs:bootstrap
 fortawesome:fontawesome
 kadira:blaze-layout
-accounts-ui
 accounts-password
 nolimits4web:swiper
 useraccounts:bootstrap
 arillo:flow-router-helpers
+ostrio:flow-router-title
