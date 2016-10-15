@@ -1,4 +1,4 @@
-<template name="blog">
+<template name="newBlog">
   {{> nav}}
 
   <div class="container">
@@ -6,10 +6,33 @@
   </div>
 </template>
 
-<template name="blog-show">
+<template name="newBlogShow">
   {{> nav}}
 
   <div class="container">
     {{> blogShow}}
+  </div>
+</template>
+
+<template name="newBlogLatest">
+  <div class="meteor-blog-latest">
+    <div class="meteor-blog-latest-heading">
+      <span>Latest Posts</span>
+    </div>
+    <ul class="meteor-blog-latest-posts">
+      {{#each latest}}
+        <li class="meteor-blog-latest-post">
+          <a href="{{blogPathFor 'blogShow'}}">
+            <div class="meteor-blog-latest-post-title">
+              {{{title}}}
+            </div>
+            <div class="meteor-blog-latest-post-date">
+              <time datetime="{{publishedAt}}">{{date publishedAt}}</time>
+            </div>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+    <a href="{{blogPathFor 'blogIndex'}}">View all posts&nbsp; &rsaquo;</a>
   </div>
 </template>

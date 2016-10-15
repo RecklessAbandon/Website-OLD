@@ -1,5 +1,9 @@
 Blog.config({
   title: 'The Heart of Teens | Blog',
-  blogIndexTemplate: 'blog',
-  blogShowTemplate: 'blog-show'
+  rss: {
+    title: 'The Heart of Teens Blog'
+  },
+  blogIndexTemplate: 'newBlog',
+  blogShowTemplate: 'newBlogShow',
+  blogLatestTemplate: 'newBlogLatest'
 });
