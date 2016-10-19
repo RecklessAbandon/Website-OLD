@@ -1,38 +1,47 @@
 <template name="newBlog">
-  {{> nav}}
+	{{> nav}}
 
-  <div class="container">
-    {{> blogIndex}}
-  </div>
+	<div class="container">
+		{{> blogIndex}}
+	</div>
 </template>
 
 <template name="newBlogShow">
-  {{> nav}}
+	{{> nav}}
 
-  <div class="container">
-    {{> blogShow}}
-  </div>
+	<div class="container">
+		{{> blogShow}}
+	</div>
 </template>
 
 <template name="newBlogLatest">
-  <div class="meteor-blog-latest">
-    <div class="meteor-blog-latest-heading">
-      <span>Latest Posts</span>
-    </div>
-    <ul class="meteor-blog-latest-posts">
-      {{#each latest}}
-        <li class="meteor-blog-latest-post">
-          <a href="{{blogPathFor 'blogShow'}}">
-            <div class="meteor-blog-latest-post-title">
-              {{{title}}}
-            </div>
-            <div class="meteor-blog-latest-post-date">
-              <time datetime="{{publishedAt}}">{{date publishedAt}}</time>
-            </div>
-          </a>
-        </li>
-      {{/each}}
-    </ul>
-    <a href="{{blogPathFor 'blogIndex'}}">View all posts&nbsp; &rsaquo;</a>
+  <div class="row">
+	  <div class="well meteor-blog-latest">
+	  	<div class="meteor-blog-latest-heading">
+	  		<h2>Featured Post</h2>
+	  	</div>
+
+	  	{{#each latest}}
+	  	  <div class="meteor-blog-post">
+	  	  	<div class="panel panel-default meteor-blog-post-excerpt">
+	  	  		<div class="panel-heading">
+	  	  			<a href="{{blogPathFor 'blogShow'}}">{{title}}</a>
+	  	  		</div>
+	  	  	  {{#if featuredImage}}
+	  	  	    <div class="meteor-blog-post-thumbnail col-xs-2">
+	  	  	    	<img src="{{featuredImage}}" alt="{{title}}" class="img-responsive">
+	  	  	    </div>
+	  	  	  {{/if}}
+	  	  		<div class="meteor-blog-post-excerpt">
+	  	  			<p>{{{excerpt}}}</p>
+              <br>
+              <a href="{{blogPathFor 'blogShow'}}" class="pull-right">Read More&nbsp; &rsaquo;</a>
+	  	  		</div>
+	  	  	</div>
+	  	  </div>
+	  	{{/each}}
+
+	  	<a href="{{blogPathFor 'blogIndex'}}" class="pull-right">View all posts&nbsp; &rsaquo;</a>
+	  </div>
   </div>
 </template>
