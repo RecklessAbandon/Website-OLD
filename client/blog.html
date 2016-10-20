@@ -16,32 +16,28 @@
 
 <template name="newBlogLatest">
   <div class="row">
-	  <div class="well meteor-blog-latest">
-	  	<div class="meteor-blog-latest-heading">
-	  		<h2>Featured Post</h2>
-	  	</div>
+	  	<h2>Featured Post</h2>
 
 	  	{{#each latest}}
-	  	  <div class="meteor-blog-post">
-	  	  	<div class="panel panel-default meteor-blog-post-excerpt">
-	  	  		<div class="panel-heading">
-	  	  			<a href="{{blogPathFor 'blogShow'}}">{{title}}</a>
-	  	  		</div>
-	  	  	  {{#if featuredImage}}
-	  	  	    <div class="meteor-blog-post-thumbnail col-xs-2">
-	  	  	    	<img src="{{featuredImage}}" alt="{{title}}" class="img-responsive">
-	  	  	    </div>
-	  	  	  {{/if}}
-	  	  		<div class="meteor-blog-post-excerpt">
-	  	  			<p>{{{excerpt}}}</p>
-              <br>
-              <a href="{{blogPathFor 'blogShow'}}" class="pull-right">Read More&nbsp; &rsaquo;</a>
-	  	  		</div>
+	  	  <div class="panel panel-default clearfix">
+	  	  	<div class="panel-heading">
+	  	  		<a href="{{blogPathFor 'blogShow'}}" class="panel-title">{{title}}</a>
 	  	  	</div>
+
+          <div class="panel-body">
+	  	      {{#if featuredImage}}
+	  	        <div class="col-xs-2">
+	  	        	<img src="{{featuredImage}}" alt="{{title}}" class="img-responsive">
+	  	        </div>
+	  	      {{/if}}
+
+	  	  	  <p>{{{excerpt}}}</p>
+            <br>
+            <a href="{{blogPathFor 'blogShow'}}" class="pull-right">Read More&nbsp; &rsaquo;</a>
+	        </div>
 	  	  </div>
 	  	{{/each}}
 
 	  	<a href="{{blogPathFor 'blogIndex'}}" class="pull-right">View all posts&nbsp; &rsaquo;</a>
-	  </div>
   </div>
 </template>
