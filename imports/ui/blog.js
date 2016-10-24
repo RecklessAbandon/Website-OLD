@@ -1,3 +1,7 @@
+import 'meteor/ryw:blog';
+
+import './blog.html';
+
 Blog.config({
   title: 'The Heart of Teens | Blog',
   rss: {

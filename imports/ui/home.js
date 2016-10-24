@@ -1,3 +1,10 @@
+import { Template } from 'meteor/templating';
+
+import { Slides } from '../../lib/api/slider.js';
+
+import './home.html';
+import './home.css';
+
 Template.home.onRendered(function() {
   var swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
