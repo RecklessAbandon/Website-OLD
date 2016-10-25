@@ -1,9 +1,20 @@
-<template name="admin-customize">
+<template name="admin_customize">
   {{> nav}}
 
   <div class="container">
     <h2>Customize Website</h2>
     <hr>
-    <h4>Home Page Slides</h4>
+
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="well clearfix">
+          <h4>Home Page Slides</h4>
+
+          <form class="new-slide">
+            <input type="url" name="url" class="form-control" placeholder="Image URL" />
+          </form>
+        </div>
+      </div>
+    </div>
 	</div>
 </template>

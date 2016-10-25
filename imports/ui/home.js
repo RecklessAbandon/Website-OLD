@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 
-import { Slides } from '../../lib/api/slider.js';
+import { Slides } from '../api/slider.js';
 
 import './home.html';
 import './home.css';
@@ -21,4 +21,14 @@ Template.home.onRendered(function() {
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev'
   })
+});
+
+Template.home.onCreated(function() {
+  Meteor.subscribe('slider_slides');
+});
+
+Template.home.helpers({
+  slides() {
+    return Slides.find({}, { sort: { createdAt: -1 } }).fetch();
+  }
 });
