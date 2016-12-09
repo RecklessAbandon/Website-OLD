@@ -1,6 +1,6 @@
 # Website
 
-The Heart of Teens Official Website
+The Heart of Teens Official Website [DEPRECATED (in favor of WordPress)]
 
 ## License
 
